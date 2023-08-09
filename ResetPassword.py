@@ -46,4 +46,9 @@ def update_db(): # Faz o update e zera as tentativas de login
     except pyodbc.Error as e:
         messagebox.showerror("ATENÇÃO", f"Erro ao executar a consulta no banco de dados: {e}")
 
+def run(): # Função para juntas todos os códigos.
+    access_db()
+    update_db()
+    close_db()
 
+run() # Roda o código

@@ -33,13 +33,14 @@ def update_db(): # Faz o update e zera as tentativas de login
     global cursor # Pega o cursor global
 
     try:
-        query_update =""
+        query_update ="update USUAR set Qtd_TenLogInv = 0 where Qtd_TenLogInv > 0"
 
         cursor.execute(query_update) # Executa a query
         conn.commit() # Confirma o update
 
         rows_affected = cursor.rowcount # Verifica quantas linhas foram afetadas
         messagebox.showinfo("ATENÇÃO", f"Foram afetadas {rows_affected} linhas!")
+        print(f"Foram afetadas {rows_affected} linhas!")
         return rows_affected # Retorna o valor da linha para armazenar em uma variavel
 
 

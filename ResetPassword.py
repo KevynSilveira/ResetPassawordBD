@@ -33,7 +33,7 @@ def update_db(): # Faz o update e zera as tentativas de login
     global cursor # Pega o cursor global
 
     try:
-        query_update ="update USUAR set Qtd_TenLogInv = 0 where Qtd_TenLogInv > 0"
+        query_update ="update USUAR set Qtd_TenLogInv = 0 where Qtd_TenLogInv = 5"
 
         cursor.execute(query_update) # Executa a query
         conn.commit() # Confirma o update
